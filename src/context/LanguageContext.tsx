@@ -85,7 +85,7 @@ const translations: Record<Lang, Translations> = {
         { title: "Vie de Groupe", description: "Au-delà des cours, la vie au Lycée Pythagore est riche en moments de partage, de collaboration et d'activités collectives.", altPrefix: "Groupe" },
       ],
       ctaTitle: "Offrez à votre enfant un avenir d'excellence.",
-      ctaSubtitle: "Les inscriptions pour l'année scolaire 2024-2025 sont désormais ouvertes. Rejoignez l'élite.",
+      ctaSubtitle: "Les inscriptions pour l'année scolaire 2026-2027 sont désormais ouvertes. Rejoignez l'élite.",
       ctaBtn1: "Démarrer l'inscription", ctaBtn2: "Prendre rendez-vous",
       testimonialsLabel: "Témoignages", testimonialsTitle: "Paroles de Parents",
       testimonials: [
@@ -118,7 +118,7 @@ const translations: Record<Lang, Translations> = {
     },
     studentLife: {
       badge: "Vie Scolaire",
-      heroTitle1: "Vibrer, Créer, {h}", heroTitle2: "Grandir.",
+      heroTitle1: "Apprendre, S'épanouir, {h}", heroTitle2: "Exceller.",
       heroSub: "Plus qu'un établissement d'excellence, le Lycée Pythagore est un écosystème où chaque talent trouve son écho à travers le sport, la culture et l'engagement citoyen.",
       card1Title: "Sorties & Voyages", card1Sub: "Voir la galerie",
       card2Title: "Sports", card2Sub: "Sports",
@@ -180,7 +180,7 @@ const translations: Record<Lang, Translations> = {
         { title: "Group Life", description: "Beyond classes, life at Lycée Pythagore is rich in moments of sharing, collaboration and collective activities.", altPrefix: "Group" },
       ],
       ctaTitle: "Give your child a future of excellence.",
-      ctaSubtitle: "Enrollment for the 2024-2025 academic year is now open. Join the elite.",
+      ctaSubtitle: "Enrollment for the 2026-2027 academic year is now open. Join the elite.",
       ctaBtn1: "Start enrollment", ctaBtn2: "Book an appointment",
       testimonialsLabel: "Testimonials", testimonialsTitle: "What Parents Say",
       testimonials: [
@@ -213,7 +213,7 @@ const translations: Record<Lang, Translations> = {
     },
     studentLife: {
       badge: "Student Life",
-      heroTitle1: "Thrive, Create, {h}", heroTitle2: "Grow.",
+      heroTitle1: "Learn, Thrive, {h}", heroTitle2: "Excel.",
       heroSub: "More than an institution of excellence, Lycée Pythagore is an ecosystem where every talent finds its voice through sports, culture and civic engagement.",
       card1Title: "Trips & Outings", card1Sub: "View gallery",
       card2Title: "Sports", card2Sub: "Sports",
@@ -275,7 +275,7 @@ const translations: Record<Lang, Translations> = {
         { title: "الحياة الجماعية", description: "خارج الدروس، الحياة في Lycée Pythagore غنية بلحظات المشاركة والتعاون والأنشطة الجماعية.", altPrefix: "جماعي" },
       ],
       ctaTitle: "امنح طفلك مستقبلاً من التميز.",
-      ctaSubtitle: "التسجيل للسنة الدراسية 2024-2025 مفتوح الآن. انضموا إلى النخبة.",
+      ctaSubtitle: "التسجيل للسنة الدراسية 2026-2027 مفتوح الآن. انضموا إلى النخبة.",
       ctaBtn1: "بدء التسجيل", ctaBtn2: "حجز موعد",
       testimonialsLabel: "شهادات", testimonialsTitle: "كلمات الأولياء",
       testimonials: [
@@ -308,7 +308,7 @@ const translations: Record<Lang, Translations> = {
     },
     studentLife: {
       badge: "الحياة المدرسية",
-      heroTitle1: "انبض، أبدع، {h}", heroTitle2: "انمُ.",
+      heroTitle1: "تعلَّم، ازدهر، {h}", heroTitle2: "تفوق.",
       heroSub: "أكثر من مؤسسة تفوق، Lycée Pythagore نظام بيئي يجد فيه كل موهبة صداها عبر الرياضة والثقافة والمواطنة.",
       card1Title: "رحلات ونزهات", card1Sub: "عرض المعرض",
       card2Title: "الرياضة", card2Sub: "الرياضة",

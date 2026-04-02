@@ -177,7 +177,7 @@ export default function Home() {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 lg:gap-8">
           <Reveal delay="0ms">
             <div className="bg-surface-container-lowest p-6 sm:p-8 lg:p-10 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-1 relative overflow-hidden group h-full">
-              <div className="absolute -bottom-6 -right-6 text-7xl sm:text-8xl lg:text-9xl font-serif text-slate-50 opacity-20 group-hover:scale-110 transition-transform duration-500">01</div>
+              <div dir="ltr" className="absolute -bottom-6 -right-6 text-7xl sm:text-8xl lg:text-9xl font-serif text-slate-50 opacity-20 group-hover:scale-110 transition-transform duration-500">01</div>
               <div className="w-12 h-12 sm:w-14 sm:h-14 bg-secondary-container/10 rounded-2xl flex items-center justify-center mb-5 sm:mb-8">
                 <GraduationCap className="text-secondary w-6 h-6 sm:w-7 sm:h-7" />
               </div>
@@ -190,7 +190,7 @@ export default function Home() {
 
           <Reveal delay="150ms">
             <div className="bg-primary text-white p-6 sm:p-8 lg:p-10 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-500 hover:-translate-y-1 relative overflow-hidden group h-full">
-              <div className="absolute -bottom-6 -right-6 text-7xl sm:text-8xl lg:text-9xl font-serif text-white/5 group-hover:scale-110 transition-transform duration-500">02</div>
+              <div dir="ltr" className="absolute -bottom-6 -right-6 text-7xl sm:text-8xl lg:text-9xl font-serif text-white/5 group-hover:scale-110 transition-transform duration-500">02</div>
               <div className="w-12 h-12 sm:w-14 sm:h-14 bg-white/10 rounded-2xl flex items-center justify-center mb-5 sm:mb-8">
                 <Brain className="text-white w-6 h-6 sm:w-7 sm:h-7" />
               </div>
@@ -203,7 +203,7 @@ export default function Home() {
 
           <Reveal delay="300ms">
             <div className="bg-surface-container-lowest p-6 sm:p-8 lg:p-10 rounded-2xl shadow-sm hover:shadow-xl transition-all duration-500 hover:-translate-y-1 relative overflow-hidden group h-full sm:col-span-2 lg:col-span-1">
-              <div className="absolute -bottom-6 -right-6 text-7xl sm:text-8xl lg:text-9xl font-serif text-slate-50 opacity-20 group-hover:scale-110 transition-transform duration-500">03</div>
+              <div dir="ltr" className="absolute -bottom-6 -right-6 text-7xl sm:text-8xl lg:text-9xl font-serif text-slate-50 opacity-20 group-hover:scale-110 transition-transform duration-500">03</div>
               <div className="w-12 h-12 sm:w-14 sm:h-14 bg-secondary-container/10 rounded-2xl flex items-center justify-center mb-5 sm:mb-8">
                 <Users className="text-secondary w-6 h-6 sm:w-7 sm:h-7" />
               </div>
@@ -223,7 +223,7 @@ export default function Home() {
             {t.home.stats.map((s, i) => (
               <Reveal key={i} delay={`${i * 100}ms`}>
                 <div>
-                  <div className={`text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-black ${i % 2 === 0 ? "text-secondary" : "text-primary"} mb-1 sm:mb-2`}>
+                  <div dir="ltr" className={`text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-black ${i % 2 === 0 ? "text-secondary" : "text-primary"} mb-1 sm:mb-2`}>
                     {s.val}
                   </div>
                   <div className="text-on-surface-variant font-medium tracking-wide uppercase text-[10px] sm:text-xs">

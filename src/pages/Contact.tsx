@@ -58,7 +58,7 @@ export default function Contact() {
               </div>
               <div className="min-w-0">
                 <div className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-1">{t.contact.phoneLabel}</div>
-                <div className="text-xl sm:text-2xl font-bold text-primary mb-1 sm:mb-2">53 518 054</div>
+                <div dir="ltr" className="text-xl sm:text-2xl font-bold text-primary mb-1 sm:mb-2">53 518 054</div>
                 <div className="text-xs sm:text-sm text-slate-500">{t.contact.phoneSchedule}</div>
               </div>
             </a></Reveal>
@@ -70,7 +70,7 @@ export default function Contact() {
               </div>
               <div className="min-w-0">
                 <div className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-1">{t.contact.emailLabel}</div>
-                <div className="text-sm font-bold text-primary mb-1 sm:mb-2 truncate">lyceepythagore19@gmail.com</div>
+                <div dir="ltr" className="text-sm font-bold text-primary mb-1 sm:mb-2 truncate">lyceepythagore19@gmail.com</div>
                 <div className="text-xs sm:text-sm text-slate-500">{t.contact.emailResponse}</div>
               </div>
             </a></Reveal>

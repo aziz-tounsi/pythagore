@@ -202,11 +202,11 @@ export default function Layout() {
             <ul className="space-y-4">
               <li className="flex items-center gap-3 text-slate-300 hover:text-white transition-colors">
                 <Phone className="text-secondary w-5 h-5 shrink-0" />
-                <a href="tel:+21653518054" className="hover:text-white transition-colors">53 518 054</a>
+                <a dir="ltr" href="tel:+21653518054" className="hover:text-white transition-colors">53 518 054</a>
               </li>
               <li className="flex items-center gap-3 text-slate-300 hover:text-white transition-colors">
                 <Mail className="text-secondary w-5 h-5 shrink-0" />
-                <a href="mailto:lyceepythagore19@gmail.com" className="break-all hover:text-white transition-colors">lyceepythagore19@gmail.com</a>
+                <a dir="ltr" href="mailto:lyceepythagore19@gmail.com" className="break-all hover:text-white transition-colors">lyceepythagore19@gmail.com</a>
               </li>
               <li className="flex items-start gap-3 text-slate-300 hover:text-white transition-colors">
                 <MapPin className="text-secondary w-5 h-5 shrink-0 mt-1" />

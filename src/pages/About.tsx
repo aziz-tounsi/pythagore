@@ -63,7 +63,7 @@ export default function About() {
             </div></Reveal>
             <div className="w-full md:w-2/3 space-y-16">
               <Reveal delay="0ms"><div className="flex flex-col md:flex-row gap-8 items-start">
-                <div className="text-5xl md:text-6xl font-black text-secondary/30 font-serif">
+                <div dir="ltr" className="text-5xl md:text-6xl font-black text-secondary/30 font-serif">
                   {t.about.year2019}
                 </div>
                 <div>
@@ -182,7 +182,7 @@ export default function About() {
               />
             </div>
             <div className="rounded-3xl bg-primary text-white p-8 flex flex-col justify-center h-1/2 shadow-xl">
-              <div className="text-5xl font-black text-secondary mb-2">{t.about.successRate}</div>
+              <div dir="ltr" className="text-5xl font-black text-secondary mb-2">{t.about.successRate}</div>
               <div className="text-xl font-bold mb-2">{t.about.successTitle}</div>
               <p className="text-slate-300 text-sm">
                 {t.about.successText}

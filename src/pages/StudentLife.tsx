@@ -280,7 +280,7 @@ export default function StudentLife() {
                         <span className={`w-10 text-sm font-bold shrink-0 ${ isToday ? "text-primary" : "text-slate-500" }`}>{label}</span>
                         <span className={`w-2.5 h-2.5 rounded-full shrink-0 me-4 ${ isToday ? "bg-primary" : "bg-slate-300" }`} />
                         <div className="flex-1">
-                          <span className={`text-sm font-semibold ${ isToday ? "text-primary" : "text-slate-700" }`}>
+                          <span dir="ltr" className={`text-sm font-semibold ${ isToday ? "text-primary" : "text-slate-700" }`}>
                             {open} — {close}
                           </span>
                         </div>
