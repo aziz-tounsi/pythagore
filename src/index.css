@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;500;600;700;800;900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-background: #fbf9f5;
+  --color-primary: #000618;
+  --color-primary-container: #001e47;
+  --color-secondary: #b6231c;
+  --color-secondary-container: #fd5747;
+  --color-on-secondary-container: #5c0002;
+  --color-surface-container-lowest: #ffffff;
+  --color-surface-container-low: #f5f3ef;
+  --color-on-surface-variant: #44474f;
+  --color-on-surface: #1b1c1a;
+
+  --font-headline: "Cairo", sans-serif;
+  --font-body: "Cairo", sans-serif;
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-on-surface);
+  font-family: var(--font-body);
+}
+
+.glass-card {
+  background: rgba(0, 30, 71, 0.6);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.geometric-bg {
+  background-image: radial-gradient(circle at 2px 2px, rgba(0,6,24,0.03) 1px, transparent 0);
+  background-size: 40px 40px;
+}
+
+.math-motif {
+  position: absolute;
+  font-family: serif;
+  opacity: 0.03;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* ── Scroll-reveal animation ── */
+@keyframes fade-up {
+  from { opacity: 0; transform: translateY(1.5rem); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fade-in {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes slide-in-left {
+  from { opacity: 0; transform: translateX(-2rem); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes slide-in-right {
+  from { opacity: 0; transform: translateX(2rem); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+@keyframes scale-in {
+  from { opacity: 0; transform: scale(0.92); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+.animate-fade-up   { animation: fade-up        0.7s ease-out forwards; }
+.animate-fade-in   { animation: fade-in        0.6s ease-out forwards; }
+.animate-slide-left  { animation: slide-in-left  0.7s ease-out forwards; }
+.animate-slide-right { animation: slide-in-right 0.7s ease-out forwards; }
+.animate-scale-in  { animation: scale-in       0.6s ease-out forwards; }
+
+/* hide scrollbar but keep scroll */
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+/* stagger helpers */
+.delay-100  { animation-delay: 100ms; }
+.delay-200  { animation-delay: 200ms; }
+.delay-300  { animation-delay: 300ms; }
+.delay-400  { animation-delay: 400ms; }
+.delay-500  { animation-delay: 500ms; }
+.delay-600  { animation-delay: 600ms; }
