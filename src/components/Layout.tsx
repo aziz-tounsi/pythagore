@@ -30,6 +30,21 @@ export default function Layout() {
   useEffect(() => {
     setIsMobileMenuOpen(false);
     window.scrollTo({ top: 0, behavior: "instant" });
+
+    // Dynamic SEO titles per page
+    const titles: Record<string, string> = {
+      "/": "Lycée Pythagore Kairouan — Excellence & Engagement",
+      "/a-propos": "À Propos — Lycée Pythagore Kairouan",
+      "/admissions": "Admissions — Lycée Pythagore Kairouan",
+      "/vie-scolaire": "Vie Scolaire — Lycée Pythagore Kairouan",
+      "/contact": "Contact — Lycée Pythagore Kairouan",
+      "/mentions-legales": "Mentions Légales — Lycée Pythagore Kairouan",
+      "/confidentialite": "Politique de Confidentialité — Lycée Pythagore Kairouan"
+    };
+    if (titles[location.pathname]) {
+      document.title = titles[location.pathname];
+    }
+
     // GA4 page view for SPA navigation
     if (typeof window.gtag === "function") {
       window.gtag("event", "page_view", { page_path: location.pathname + location.search });
