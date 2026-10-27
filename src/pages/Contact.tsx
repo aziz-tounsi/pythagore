@@ -14,7 +14,7 @@ function Reveal({ children, className = "", delay = "" }: { children: ReactNode;
 }
 
 export default function Contact() {
-  const { t } = useLang();
+  const { t, lang } = useLang();
   const [formData, setFormData] = useState({ name: "", email: "", subject: "", message: "" });
   const [sent, setSent] = useState(false);
 
@@ -76,30 +76,50 @@ export default function Contact() {
             </a></Reveal>
 
             {/* Address */}
-            <Reveal delay="200ms"><a href="https://www.google.com/maps/search/Lyc%C3%A9e+Pythagore+Kairouan/@35.6757,10.0962,17z" target="_blank" rel="noopener noreferrer" className="bg-white p-6 sm:p-8 rounded-3xl shadow-lg border border-slate-100 flex items-start gap-4 sm:gap-6 hover:shadow-xl transition-shadow block">
+            <Reveal delay="200ms"><a href="https://www.google.com/maps/place/Lyc%C3%A9e+pilote+Pythagore/@35.6538767,10.0878363,17z/data=!3m1!4b1!4m6!3m5!1s0x12fddbd4a5f1daf3:0x130a303d8af1665c!8m2!3d35.6538767!4d10.0904112!16s%2Fg%2F11fnr5ddpm?entry=ttu&g_ep=EgoyMDI2MTAyMC4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer" className="bg-white p-6 sm:p-8 rounded-3xl shadow-lg border border-slate-100 flex items-start gap-4 sm:gap-6 hover:shadow-xl transition-shadow block">
               <div className="w-12 h-12 sm:w-14 sm:h-14 bg-slate-100 rounded-2xl flex items-center justify-center shrink-0">
                 <MapPin className="text-primary w-5 h-5 sm:w-6 sm:h-6" />
               </div>
               <div className="min-w-0">
                 <div className="text-xs font-bold text-slate-400 uppercase tracking-widest mb-1">{t.contact.addressLabel}</div>
-                <div className="text-base sm:text-lg font-bold text-primary mb-1 sm:mb-2">Rue El Emir Faicel, Kairouan</div>
+                <div className="text-base sm:text-lg font-bold text-primary mb-1 sm:mb-2">{t.footer.address}</div>
                 <div className="text-xs sm:text-sm text-slate-500">{t.contact.addressCity}</div>
               </div>
             </a></Reveal>
 
             {/* Social */}
-            <Reveal delay="300ms"><a href="https://www.facebook.com/profile.php?id=100064041700592" target="_blank" rel="noopener noreferrer" className="bg-blue-950 p-6 sm:p-8 rounded-3xl shadow-lg text-white relative overflow-hidden group block">
-              <div className="absolute -bottom-10 -right-10 opacity-20 group-hover:scale-110 transition-transform">
-                <Facebook className="w-40 h-40" />
-              </div>
+            <Reveal delay="300ms"><div className="bg-blue-950 p-6 sm:p-8 rounded-3xl shadow-lg text-white relative overflow-hidden group block">
               <div className="relative z-10">
                 <h3 className="text-lg sm:text-xl font-bold mb-2">{t.contact.socialTitle}</h3>
                 <p className="text-slate-300 text-xs sm:text-sm mb-4 sm:mb-6">{t.contact.socialText}</p>
-                <span className="inline-flex items-center gap-2 font-bold hover:text-secondary transition-colors">
-                  Facebook <ExternalLink className="w-4 h-4" />
-                </span>
+                <div className="flex flex-wrap items-center gap-3">
+                  <a
+                    href="https://www.facebook.com/profile.php?id=100064041700592"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 bg-white/10 hover:bg-[#1877F2] px-4 py-2 rounded-full text-xs font-bold transition-colors"
+                  >
+                    Facebook <ExternalLink className="w-3.5 h-3.5" />
+                  </a>
+                  <a
+                    href="https://www.instagram.com/lycee.pythagore/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 bg-white/10 hover:bg-gradient-to-r hover:from-[#f09433] hover:via-[#dc2743] hover:to-[#bc1888] px-4 py-2 rounded-full text-xs font-bold transition-all"
+                  >
+                    Instagram <ExternalLink className="w-3.5 h-3.5" />
+                  </a>
+                  <a
+                    href="https://www.tiktok.com/@lyceepythagore"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 bg-white/10 hover:bg-black px-4 py-2 rounded-full text-xs font-bold transition-colors"
+                  >
+                    TikTok <ExternalLink className="w-3.5 h-3.5" />
+                  </a>
+                </div>
               </div>
-            </a></Reveal>
+            </div></Reveal>
           </div>
 
           {/* Right Column: Form */}
@@ -179,13 +199,13 @@ export default function Contact() {
       <section className="max-w-7xl mx-auto px-4 md:px-6 py-12 md:py-24">
         <div
           className="relative rounded-[3rem] overflow-hidden shadow-2xl h-[420px] md:h-[500px] cursor-pointer group"
-          onClick={() => window.open("https://www.google.com/maps/place/Lyc%C3%A9e+Pythagore+Kairouan/@35.6757,10.0962,17z", '_blank', 'noopener,noreferrer')}
-          title="Ouvrir dans Google Maps"
+          onClick={() => window.open("https://www.google.com/maps/place/Lyc%C3%A9e+pilote+Pythagore/@35.6538767,10.0878363,17z/data=!3m1!4b1!4m6!3m5!1s0x12fddbd4a5f1daf3:0x130a303d8af1665c!8m2!3d35.6538767!4d10.0904112!16s%2Fg%2F11fnr5ddpm?entry=ttu&g_ep=EgoyMDI2MTAyMC4wIKXMDSoASAFQAw%3D%3D", '_blank', 'noopener,noreferrer')}
+          title={t.contact.mapLink}
         >
           {/* Google Maps embed */}
           <iframe
-            title="Lycée Pythagore Kairouan"
-            src="https://maps.google.com/maps?q=35.675756,10.096231&z=17&hl=fr&output=embed"
+            title="Lycée pilote Pythagore"
+            src={`https://maps.google.com/maps?q=35.6538767,10.0904112&z=17&hl=${lang === 'ar' ? 'ar' : lang === 'en' ? 'en' : 'fr'}&output=embed`}
             className="w-full h-full border-0 pointer-events-none"
             loading="lazy"
           />

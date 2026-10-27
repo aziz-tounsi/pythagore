@@ -1,6 +1,6 @@
 import { Users, Trophy, HeartHandshake, ArrowRight, PlayCircle, Images, ChevronLeft, ChevronRight, X } from "lucide-react";
 import type { ReactNode } from "react";
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { useReveal } from "../components/Layout";
 import { useLang } from "../context/LanguageContext";
 
@@ -51,6 +51,33 @@ export default function StudentLife() {
   const lbLen = lbImages.length;
   const lbPrev = () => setLightbox(lb => lb ? { ...lb, idx: (lb.idx - 1 + lbLen) % lbLen } : lb);
   const lbNext = () => setLightbox(lb => lb ? { ...lb, idx: (lb.idx + 1) % lbLen } : lb);
+
+  /* Touch swipe for mobile */
+  const touchStartX = useRef(0);
+  const touchStartY = useRef(0);
+  const handleLbTouchStart = (e: React.TouchEvent) => {
+    touchStartX.current = e.touches[0].clientX;
+    touchStartY.current = e.touches[0].clientY;
+  };
+  const handleLbTouchEnd = (e: React.TouchEvent) => {
+    const dx = e.changedTouches[0].clientX - touchStartX.current;
+    const dy = e.changedTouches[0].clientY - touchStartY.current;
+    if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 40) {
+      if (dx < 0) lbNext();
+      else lbPrev();
+    }
+  };
+
+  useEffect(() => {
+    if (!lightbox) return;
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "ArrowLeft") lbPrev();
+      else if (e.key === "ArrowRight") lbNext();
+      else if (e.key === "Escape") setLightbox(null);
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [lightbox, lbLen]);
   return (
     <>
       {/* Hero Section */}
@@ -306,13 +333,15 @@ export default function StudentLife() {
       {/* ── In-page gallery lightbox ── */}
       {lightbox !== null && (
         <div
-          className="fixed inset-0 z-[200] bg-black/50 backdrop-blur-xl flex items-center justify-center"
+          className="fixed inset-0 z-[200] bg-black/60 backdrop-blur-xl flex items-center justify-center select-none"
           onClick={() => setLightbox(null)}
+          onTouchStart={handleLbTouchStart}
+          onTouchEnd={handleLbTouchEnd}
         >
           {/* Close */}
           <button
             aria-label="Fermer" title="Fermer"
-            className="absolute top-5 right-5 z-10 w-11 h-11 rounded-full bg-white/20 backdrop-blur-md border border-white/30 hover:bg-white/35 flex items-center justify-center transition-colors"
+            className="absolute top-5 right-5 z-10 w-11 h-11 rounded-full bg-white/20 backdrop-blur-md border border-white/30 hover:bg-white/35 flex items-center justify-center transition-colors cursor-pointer"
             onClick={() => setLightbox(null)}
           >
             <X className="w-5 h-5 text-white" />
@@ -326,25 +355,25 @@ export default function StudentLife() {
           {/* Prev */}
           <button
             aria-label="Précédent" title="Précédent"
-            className="absolute left-3 sm:left-6 z-10 w-12 h-12 rounded-full bg-white/20 backdrop-blur-md border border-white/30 hover:bg-white/35 flex items-center justify-center transition-colors"
+            className="absolute left-3 sm:left-6 z-10 w-12 h-12 rounded-full bg-white/20 backdrop-blur-md border border-white/30 hover:bg-white/35 flex items-center justify-center transition-colors cursor-pointer"
             onClick={(e) => { e.stopPropagation(); lbPrev(); }}
           >
             <ChevronLeft className="w-6 h-6 text-white" />
           </button>
 
-          {/* Image — full viewport width */}
-          <div className="absolute inset-0 flex items-center justify-center" onClick={e => e.stopPropagation()}>
+          {/* Image — contained */}
+          <div className="absolute inset-0 flex items-center justify-center p-4 sm:p-12 pointer-events-none">
             <img
               src={lbImages[lightbox.idx]}
               alt={`Photo ${lightbox.idx + 1}`}
-              className="w-full h-full object-contain shadow-2xl"
+              className="max-w-full max-h-full object-contain shadow-2xl rounded-lg"
             />
           </div>
 
           {/* Next */}
           <button
             aria-label="Suivant" title="Suivant"
-            className="absolute right-3 sm:right-6 z-10 w-12 h-12 rounded-full bg-white/20 backdrop-blur-md border border-white/30 hover:bg-white/35 flex items-center justify-center transition-colors"
+            className="absolute right-3 sm:right-6 z-10 w-12 h-12 rounded-full bg-white/20 backdrop-blur-md border border-white/30 hover:bg-white/35 flex items-center justify-center transition-colors cursor-pointer"
             onClick={(e) => { e.stopPropagation(); lbNext(); }}
           >
             <ChevronRight className="w-6 h-6 text-white" />

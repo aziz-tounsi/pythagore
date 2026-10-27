@@ -77,7 +77,7 @@ export default function About() {
               <Reveal delay="150ms"><div className="rounded-2xl overflow-hidden shadow-xl relative">
                 <img 
                   src="/images/eaquipe.jpg" 
-                  alt="Founding team" 
+                  alt={t.about.teamCaption} 
                   className="w-full h-[300px] object-cover"
                 />
                 <div className="absolute bottom-0 left-0 w-full bg-gradient-to-t from-primary/90 to-transparent p-8">

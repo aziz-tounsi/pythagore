@@ -6,7 +6,7 @@ export type Lang = "fr" | "en" | "ar";
 export interface Translations {
   nav: { home: string; about: string; admissions: string; studentLife: string; contact: string };
   hero: { badge: string; title: string; subtitle: string; cta1: string; cta2: string };
-  footer: { contactUs: string; quickLinks: string; description: string; rights: string; legal: string; privacy: string; dev: string; news: string; recruitment: string; parentPortal: string };
+  footer: { contactUs: string; quickLinks: string; description: string; rights: string; legal: string; privacy: string; dev: string; news: string; recruitment: string; parentPortal: string; address: string };
   home: {
     whyTitle: string; whySubtitle: string;
     card1Title: string; card1Text: string;
@@ -68,7 +68,7 @@ const translations: Record<Lang, Translations> = {
   fr: {
     nav: { home: "Accueil", about: "À Propos", admissions: "Admissions", studentLife: "Vie Scolaire", contact: "Contact" },
     hero: { badge: "Excellence Académique", title: "L'excellence à portée de main", subtitle: "Plus qu'une école, une communauté où les jeunes esprits sont cultivés pour atteindre leur plein potentiel.", cta1: "Pré-inscription", cta2: "Découvrir l'établissement" },
-    footer: { contactUs: "Contactez-nous", quickLinks: "Liens Rapides", description: "Lycée Pilote Privé Pythagore Kairouan. L'excellence académique au cœur de la ville historique.", rights: "© 2026 Lycée Pilote Privé Pythagore Kairouan. Tous droits réservés.", legal: "Mentions Légales", privacy: "Confidentialité", dev: "Développé par", news: "Actualités", recruitment: "Recrutement", parentPortal: "Espace Parent" },
+    footer: { contactUs: "Contactez-nous", quickLinks: "Liens Rapides", description: "Lycée Pilote Privé Pythagore Kairouan. L'excellence académique au cœur de la ville historique.", rights: "© 2026 Lycée Pilote Privé Pythagore Kairouan. Tous droits réservés.", legal: "Mentions Légales", privacy: "Confidentialité", dev: "Développé par", news: "Actualités", recruitment: "Recrutement", parentPortal: "Espace Parent", address: "Rue El Emir Faicel, Kairouan" },
     home: {
       whyTitle: "Pourquoi Pythagore ?",
       whySubtitle: "Une approche pédagogique centrée sur l'épanouissement et la réussite de chaque élève.",
@@ -102,8 +102,8 @@ const translations: Record<Lang, Translations> = {
       historyTitle: "Notre Histoire",
       historyIntro: "Fondé avec la vision de ramener l'excellence pédagogique au cœur de la ville historique de Kairouan, le Lycée Pythagore est né d'une passion pour le savoir.",
       year2019: "2019", foundationTitle: "La Fondation",
-      foundationText: "Un petit groupe d'éducateurs visionnaires décide de créer un établissement où la discipline rencontre la bienveillance. L'objectif était clair : offrir aux élèves de Kairouan un environnement comparable aux meilleures institutions internationales.",
-      teamCaption: "L'équipe fondatrice", teamSub: "Rigueur et Passion",
+      foundationText: "Une enseignante et éducatrice visionnaire décide de fonder le premier lycée dans la région de la Mansourah, un établissement où la discipline rencontre la bienveillance. L'objectif était clair : offrir aux élèves de Kairouan un cadre d'excellence digne des meilleures institutions internationales.",
+      teamCaption: "La Fondatrice", teamSub: "Rigueur et Passion",
       todayLabel: "Aujourd'hui", missionTitle: "Une Mission de Vie",
       missionText: "Aujourd'hui, Pythagore est fier de ses résultats exceptionnels aux examens nationaux, mais notre plus grande fierté reste le regard brillant de nos élèves qui découvrent chaque jour leurs propres capacités.",
       valuesLabel: "Le Socle Pythagore", valuesTitle: "Nos Valeurs Fondamentales", valuesSubtitle: "Un accompagnement humain pour des résultats d'exception.",
@@ -112,7 +112,7 @@ const translations: Record<Lang, Translations> = {
       val3Title: "Accompagnement", val3Text: "Chaque enfant est unique. Notre écoute attentive et notre suivi personnalisé assurent que personne n'est laissé pour compte dans son parcours éducatif.",
       envTitle: "Un Cadre Inspirant", envText: "Nos laboratoires et espaces de vie sont conçus pour stimuler la curiosité et l'innovation.",
       successRate: "98%", successTitle: "Taux de réussite", successText: "Une preuve constante de l'engagement de nos élèves et de l'expertise de notre corps professoral.",
-      ctaTitle: "Prêt à rejoindre l'aventure Pythagore ?",
+      ctaTitle: "Votre avenir commence ici avec Pythagore",
       ctaText: "Les inscriptions pour la rentrée prochaine sont ouvertes. Venez nous rencontrer et découvrez notre campus à Kairouan.",
       ctaBtn1: "Prendre Rendez-vous", ctaBtn2: "Télécharger la Brochure",
     },
@@ -163,7 +163,7 @@ const translations: Record<Lang, Translations> = {
   en: {
     nav: { home: "Home", about: "About", admissions: "Admissions", studentLife: "Student Life", contact: "Contact" },
     hero: { badge: "Academic Excellence", title: "Excellence within reach", subtitle: "More than a school, a community where young minds are nurtured to reach their full potential.", cta1: "Pre-enroll", cta2: "Discover the school" },
-    footer: { contactUs: "Contact Us", quickLinks: "Quick Links", description: "Pythagore Private Pilot High School Kairouan. Academic excellence at the heart of the historic city.", rights: "© 2026 Lycée Pilote Privé Pythagore Kairouan. All rights reserved.", legal: "Legal Notice", privacy: "Privacy", dev: "Developed by", news: "News", recruitment: "Recruitment", parentPortal: "Parent Portal" },
+    footer: { contactUs: "Contact Us", quickLinks: "Quick Links", description: "Pythagore Private Pilot High School Kairouan. Academic excellence at the heart of the historic city.", rights: "© 2026 Lycée Pilote Privé Pythagore Kairouan. All rights reserved.", legal: "Legal Notice", privacy: "Privacy", dev: "Developed by", news: "News", recruitment: "Recruitment", parentPortal: "Parent Portal", address: "Rue El Emir Faicel, Kairouan" },
     home: {
       whyTitle: "Why Pythagore?",
       whySubtitle: "A pedagogical approach centered on the fulfillment and success of each student.",
@@ -197,8 +197,8 @@ const translations: Record<Lang, Translations> = {
       historyTitle: "Our History",
       historyIntro: "Founded with the vision of bringing pedagogical excellence to the heart of the historic city of Kairouan, Lycée Pythagore was born from a passion for knowledge.",
       year2019: "2019", foundationTitle: "The Foundation",
-      foundationText: "A small group of visionary educators decided to create an institution where discipline meets kindness. The goal was clear: to offer Kairouan's students an environment comparable to the best international institutions.",
-      teamCaption: "The founding team", teamSub: "Rigor and Passion",
+      foundationText: "A visionary teacher and educator decided to establish the very first high school in the Mansourah region, an institution where discipline meets kindness. The goal was clear: to offer Kairouan's students an environment comparable to the best international institutions.",
+      teamCaption: "The Founder", teamSub: "Rigor and Passion",
       todayLabel: "Today", missionTitle: "A Life Mission",
       missionText: "Today, Pythagore is proud of its exceptional results in national exams, but our greatest pride remains the bright eyes of our students discovering their own abilities every day.",
       valuesLabel: "The Pythagore Foundation", valuesTitle: "Our Core Values", valuesSubtitle: "Human support for exceptional results.",
@@ -207,7 +207,7 @@ const translations: Record<Lang, Translations> = {
       val3Title: "Support", val3Text: "Every child is unique. Our attentive listening and personalized follow-up ensure that no one is left behind in their educational journey.",
       envTitle: "An Inspiring Setting", envText: "Our laboratories and living spaces are designed to stimulate curiosity and innovation.",
       successRate: "98%", successTitle: "Success Rate", successText: "A consistent proof of our students' commitment and our faculty's expertise.",
-      ctaTitle: "Ready to join the Pythagore adventure?",
+      ctaTitle: "Your future begins here with Pythagore",
       ctaText: "Enrollment for the next school year is open. Come meet us and discover our campus in Kairouan.",
       ctaBtn1: "Book an Appointment", ctaBtn2: "Download Brochure",
     },
@@ -258,7 +258,7 @@ const translations: Record<Lang, Translations> = {
   ar: {
     nav: { home: "الرئيسية", about: "من نحن", admissions: "التسجيل", studentLife: "الحياة المدرسية", contact: "اتصل بنا" },
     hero: { badge: "التميز الأكاديمي", title: "التميز في متناول يدك", subtitle: "أكثر من مجرد مدرسة، مجتمع يُنمَّى فيه العقول الشابة للوصول إلى أقصى إمكاناتها.", cta1: "التسجيل المسبق", cta2: "اكتشف المؤسسة" },
-    footer: { contactUs: "اتصل بنا", quickLinks: "روابط سريعة", description: "Lycée Pilote Privé Pythagore Kairouan. التميز الأكاديمي في قلب المدينة التاريخية.", rights: "© 2026 Lycée Pilote Privé Pythagore Kairouan. جميع الحقوق محفوظة.", legal: "إشعار قانوني", privacy: "الخصوصية", dev: "طوّره", news: "الأخبار", recruitment: "التوظيف", parentPortal: "بوابة الأولياء" },
+    footer: { contactUs: "اتصل بنا", quickLinks: "روابط سريعة", description: "Lycée Pilote Privé Pythagore القيروان. التميز الأكاديمي في قلب المدينة التاريخية.", rights: "© 2026 Lycée Pilote Privé Pythagore Kairouan. جميع الحقوق محفوظة.", legal: "إشعار قانوني", privacy: "الخصوصية", dev: "طوّره", news: "الأخبار", recruitment: "التوظيف", parentPortal: "بوابة الأولياء", address: "نهج الأمير فيصل، القيروان" },
     home: {
       whyTitle: "لماذا Pythagore؟",
       whySubtitle: "منهج تعليمي يركز على ازدهار ونجاح كل تلميذ.",
@@ -286,24 +286,24 @@ const translations: Record<Lang, Translations> = {
     },
     about: {
       badge: "تراث وتميّز",
-      heroTitle1: "صياغة {h} الغد في Kairouan.", heroTitle2: "عقول",
+      heroTitle1: "صياغة {h} الغد في القيروان.", heroTitle2: "عقول",
       heroSubtitle: "أكثر من مدرسة، عائلة أكاديمية مكرسة للازدهار الفكري والإنساني لكل تلميذ منذ 2019.",
       quoteText: "التعليم ليس إعداداً للحياة؛ التعليم هو الحياة ذاتها.",
       historyTitle: "تاريخنا",
-      historyIntro: "تأسست Lycée Pythagore برؤية إعادة التميز التربوي إلى قلب مدينة Kairouan التاريخية، ولدت من شغف بالمعرفة.",
+      historyIntro: "تأسس معهد Lycée Pythagore برؤية إعادة التميز التربوي إلى قلب مدينة القيروان التاريخية، وليد شغف عميق بنشر العلم والمعرفة وتكوين أجيال المستقبل.",
       year2019: "2019", foundationTitle: "التأسيس",
-      foundationText: "قررت مجموعة صغيرة من المربين أصحاب الرؤية إنشاء مؤسسة يلتقي فيها الانضباط بالرفق. كان الهدف واضحاً: تقديم بيئة تضاهي أفضل المؤسسات الدولية لتلاميذ Kairouan.",
-      teamCaption: "الفريق المؤسس", teamSub: "الصرامة والشغف",
+      foundationText: "قررت أستاذة ومربية صاحبة رؤية تأسيس أول معهد ثانوي في منطقة المنصورة، مؤسسة يلتقي فيها الانضباط بالرفق والمسؤولية. وكان الهدف واضحاً: تقديم بيئة تعليمية نموذجية تضاهي أفضل المؤسسات لتلاميذ القيروان.",
+      teamCaption: "الأستاذة المؤسسة", teamSub: "الريادة والشغف بالتعليم",
       todayLabel: "اليوم", missionTitle: "رسالة حياة",
-      missionText: "اليوم، Pythagore فخورة بنتائجها الاستثنائية في الامتحانات الوطنية، لكن فخرنا الأكبر يبقى في عيون تلاميذنا المتألقة وهم يكتشفون قدراتهم يومياً.",
+      missionText: "اليوم، يفتخر معهد Pythagore بنتائجه الاستثنائية في الامتحانات الوطنية، لكن فخرنا الأكبر يبقى في عيون تلاميذنا المتألقة وهم يكتشفون قدراتهم يومياً.",
       valuesLabel: "ركائز Pythagore", valuesTitle: "قيمنا الأساسية", valuesSubtitle: "مرافقة إنسانية لنتائج استثنائية.",
       val1Title: "التميز", val1Text: "لا نسعى فقط إلى النجاح الدراسي بل إلى تجاوز الذات. كل تلميذ مُشجَّع على بلوغ أقصى إمكاناته من خلال أساليب مبتكرة.",
       val2Title: "الانضباط", val2Text: "الإطار المنظم والمحترم ضروري للتعلم. نصقل الشخصية والمسؤولية كركيزتين لحياة مستقبلية ناجحة.",
       val3Title: "المرافقة", val3Text: "كل طفل فريد. إصغاؤنا ومتابعتنا الشخصية يضمنان ألا يُترك أحد في مسيرته التعليمية.",
       envTitle: "بيئة ملهمة", envText: "مختبراتنا وفضاءاتنا مصممة لتحفيز الفضول والابتكار.",
       successRate: "98%", successTitle: "نسبة النجاح", successText: "دليل مستمر على التزام تلاميذنا وخبرة طاقمنا التعليمي.",
-      ctaTitle: "مستعد للانضمام لمغامرة Pythagore؟",
-      ctaText: "التسجيل للسنة القادمة مفتوح. تعالوا لزيارتنا واكتشفوا حرمنا في Kairouan.",
+      ctaTitle: "مستقبلك يبدأ من هنا مع Pythagore",
+      ctaText: "التسجيل للسنة القادمة مفتوح. تفضلوا بزيارتنا واكتشفوا معهدنا في القيروان.",
       ctaBtn1: "حجز موعد", ctaBtn2: "تحميل الكتيّب",
     },
     studentLife: {
@@ -318,7 +318,7 @@ const translations: Record<Lang, Translations> = {
       clubsTitle: "الأندية والجمعيات", clubsText: "من الفلك إلى المناظرة، أكثر من 15 نادياً يديرها التلاميذ لتنمية شغف فريد.", clubsLink: "اكتشف الأندية",
       sportsTitle: "الرياضة والمنافسة", sportsText: "تمثل فرقنا الرياضية الثانوية بفخر في البطولات الجهوية والوطنية.", sportsLink: "جدول المباريات",
       citizenTitle: "المواطنة", citizenText: "الالتزام الاجتماعي في صميم مشروعنا التربوي من خلال أعمال خيرية وبيئية.", citizenLink: "مشاريع تضامنية",
-      facilitiesTitle: "إطار استثنائي", facilitiesSub: "بنية تحتية حديثة مصممة لتعزيز التركيز والإبداع في قلب Kairouan.",
+      facilitiesTitle: "إطار استثنائي", facilitiesSub: "بنية تحتية حديثة مصممة لتعزيز التركيز والإبداع في قلب القيروان.",
       cdiTitle: "المكتبة الرقمية", cdiText: "أكثر من 10,000 مورد مادي ووصول غير محدود لقواعد البيانات العالمية.",
       sportComplexTitle: "المركب الرياضي", sportComplexText: "قاعة رياضية متعددة، صالات لياقة وملاعب خارجية لجميع الرياضات.",
       theaterLabel: "نشاط مميز", theaterTitle: "ورشة المسرح:|جرّب خشبة المسرح.",
@@ -340,13 +340,13 @@ const translations: Record<Lang, Translations> = {
       heroSub: "سواء كنتم تلميذاً مستقبلياً أو ولي أمر أو شريكاً، فريقنا في خدمتكم للإجابة على جميع استفساراتكم حول الحياة في Pythagore.",
       phoneLabel: "الهاتف", phoneSchedule: "الإثنين — السبت، 8 صباحاً إلى 5 مساءً",
       emailLabel: "البريد الإلكتروني", emailResponse: "الرد خلال 24 ساعة عمل",
-      addressLabel: "العنوان", addressCity: "تونس، 3100",
-      socialTitle: "تابعوا أخبارنا", socialText: "انضموا لمجتمعنا على Facebook",
+      addressLabel: "العنوان", addressCity: "القيروان، تونس (3100)",
+      socialTitle: "تابعوا أخبارنا", socialText: "انضموا لمجتمعنا على Facebook و Instagram و TikTok",
       formName: "الاسم الكامل", formEmail: "البريد الإلكتروني", formSubject: "الموضوع", formMessage: "الرسالة",
       formPlaceholderName: "محمد علي", formPlaceholderEmail: "email@exemple.com", formPlaceholderSubject: "التسجيل، الحياة المدرسية...", formPlaceholderMessage: "كيف يمكننا مساعدتكم؟",
       formSubmit: "إرسال الرسالة",
       formSentTitle: "تم الإرسال!", formSentText: "سنرد عليكم خلال 24 ساعة عمل.", formNew: "رسالة جديدة",
-      mapTitle: "موقعنا", mapText: "في قلب Kairouan، قريب من المرافق ويمكن الوصول إليه بالمواصلات.", mapLink: "فتح في Google Maps",
+      mapTitle: "موقعنا", mapText: "في قلب القيروان (المنصورة)، قريب من كافة المرافق ويمكن الوصول إليه بسهولة.", mapLink: "فتح في Google Maps",
     },
   },
 };

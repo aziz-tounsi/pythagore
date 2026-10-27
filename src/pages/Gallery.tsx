@@ -1,6 +1,6 @@
 import { useParams, useNavigate } from "react-router-dom";
 import { ArrowLeft, X, ChevronLeft, ChevronRight, ZoomIn } from "lucide-react";
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 
 type GalleryType = "sorties" | "sports" | "activites";
 
@@ -82,6 +82,33 @@ export default function Gallery() {
   const prev = () => setLightboxIdx((i) => (i != null ? (i - 1 + cfg.images.length) % cfg.images.length : 0));
   const next = () => setLightboxIdx((i) => (i != null ? (i + 1) % cfg.images.length : 0));
 
+  /* Touch swipe for mobile */
+  const touchStartX = useRef(0);
+  const touchStartY = useRef(0);
+  const handleTouchStart = (e: React.TouchEvent) => {
+    touchStartX.current = e.touches[0].clientX;
+    touchStartY.current = e.touches[0].clientY;
+  };
+  const handleTouchEnd = (e: React.TouchEvent) => {
+    const dx = e.changedTouches[0].clientX - touchStartX.current;
+    const dy = e.changedTouches[0].clientY - touchStartY.current;
+    if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 40) {
+      if (dx < 0) next();
+      else prev();
+    }
+  };
+
+  useEffect(() => {
+    if (lightboxIdx === null) return;
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (e.key === "ArrowLeft") prev();
+      else if (e.key === "ArrowRight") next();
+      else if (e.key === "Escape") closeLightbox();
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [lightboxIdx, cfg.images.length]);
+
   return (
     <div className={`min-h-screen bg-linear-to-br ${cfg.bgFrom} text-white`}>
       {/* ── Top bar ── */}
@@ -145,14 +172,16 @@ export default function Gallery() {
       {/* ── Lightbox ── */}
       {lightboxIdx !== null && (
         <div
-          className="fixed inset-0 z-100 bg-black/95 backdrop-blur-xl flex items-center justify-center"
+          className="fixed inset-0 z-100 bg-black/95 backdrop-blur-xl flex items-center justify-center select-none"
           onClick={closeLightbox}
+          onTouchStart={handleTouchStart}
+          onTouchEnd={handleTouchEnd}
         >
           {/* Close */}
           <button
             aria-label="Fermer la galerie"
             title="Fermer"
-            className="absolute top-5 right-5 z-10 w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/25 transition-colors"
+            className="absolute top-5 right-5 z-10 w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/25 transition-colors cursor-pointer"
             onClick={closeLightbox}
           >
             <X className="w-5 h-5 text-white" />
@@ -167,14 +196,14 @@ export default function Gallery() {
           <button
             aria-label="Photo précédente"
             title="Précédent"
-            className="absolute left-3 sm:left-6 z-10 w-11 h-11 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/25 transition-colors"
+            className="absolute left-3 sm:left-6 z-10 w-11 h-11 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/25 transition-colors cursor-pointer"
             onClick={(e) => { e.stopPropagation(); prev(); }}
           >
             <ChevronLeft className="w-6 h-6 text-white" />
           </button>
 
           {/* Image */}
-          <div className="max-w-5xl max-h-[85vh] px-16 sm:px-24" onClick={(e) => e.stopPropagation()}>
+          <div className="max-w-5xl max-h-[85vh] px-4 sm:px-24 pointer-events-none flex items-center justify-center">
             <img
               src={cfg.images[lightboxIdx]}
               alt={`${cfg.title} ${lightboxIdx + 1}`}
@@ -186,7 +215,7 @@ export default function Gallery() {
           <button
             aria-label="Photo suivante"
             title="Suivant"
-            className="absolute right-3 sm:right-6 z-10 w-11 h-11 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/25 transition-colors"
+            className="absolute right-3 sm:right-6 z-10 w-11 h-11 rounded-full bg-white/10 flex items-center justify-center hover:bg-white/25 transition-colors cursor-pointer"
             onClick={(e) => { e.stopPropagation(); next(); }}
           >
             <ChevronRight className="w-6 h-6 text-white" />
